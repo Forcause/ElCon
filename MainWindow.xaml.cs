@@ -10,6 +10,7 @@ namespace Static_analyzer_app
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

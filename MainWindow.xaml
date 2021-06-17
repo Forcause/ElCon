@@ -12,27 +12,29 @@
             <Setter Property="Button.Margin" Value="5"/>
         </Style>
     </Window.Resources>
+    
     <Grid ShowGridLines="True">
         <!-- GridLines убери потом -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <ToolBarTray Grid.ColumnSpan="2">
-            <ToolBar>
-                <Button Content="File" Style="{StaticResource ToolbarButtons}"/>
-                <Button Content="Save" Style="{StaticResource ToolbarButtons}"/>
-                <Button Content="Info" Style="{StaticResource ToolbarButtons}"/>
-            </ToolBar>
-        </ToolBarTray>
+        <ToolBarPanel Grid.Row="0" ClipToBounds="True">
+            <ToolBarTray Grid.ColumnSpan="2" Background="#202020" IsLocked="True" Margin="-5,0,-13,0">
+                <ToolBar Background="#202020" Padding="5, 0, 0, 0">
+                    <Button Content="File" Foreground="GhostWhite"  Width="*" Style="{StaticResource ToolbarButtons}"/>
+                    <Button Content="Save" Foreground="White"  Width="*" Style="{StaticResource ToolbarButtons}"/>
+                    <Button Content="Info" Foreground="White" Width = "*" Style="{StaticResource ToolbarButtons}"/> 
+                </ToolBar>
+            </ToolBarTray>
+        </ToolBarPanel>
         
         <DockPanel Grid.Column="0">
-            
         </DockPanel>
         
         <DockPanel Grid.Column="1">
-            <Button Content="Подробнее" DockPanel.Dock="Bottom"/>
+            <!-- После заполнения должно уйти вниз -->
+            <Button Content="Подробнее" Width="Auto" Height="Auto" FontSize="12" Margin="10" DockPanel.Dock="Bottom"/>
         </DockPanel>
     </Grid>
 </Window>
