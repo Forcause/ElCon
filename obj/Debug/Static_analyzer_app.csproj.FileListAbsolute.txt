@@ -1,0 +1,15 @@
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\bin\Debug\Static_analyzer_app.exe.config
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\bin\Debug\Static_analyzer_app.exe
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\bin\Debug\Static_analyzer_app.pdb
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.csproj.AssemblyReference.cache
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\App.g.cs
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app_MarkupCompile.cache
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app_MarkupCompile.lref
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.g.resources
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.Properties.Resources.resources
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.csproj.GenerateResource.cache
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.csproj.CoreCompileInputs.cache
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.exe
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.pdb
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\MainWindow.g.cs
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\MainWindow.baml

@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Static_analyzer_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-         
+        Title="Project analyzer" Height="600" Width="800">
+    <Window.Resources>
+        <Style x:Key="ToolbarButtons">
+            <Setter Property="Button.FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="Button.Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid ShowGridLines="True">
+        <!-- GridLines убери потом -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <ToolBarTray Grid.ColumnSpan="2">
+            <ToolBar>
+                <Button Content="File" Style="{StaticResource ToolbarButtons}"/>
+                <Button Content="Save" Style="{StaticResource ToolbarButtons}"/>
+                <Button Content="Info" Style="{StaticResource ToolbarButtons}"/>
+            </ToolBar>
+        </ToolBarTray>
+        
+        <DockPanel Grid.Column="0">
+            
+        </DockPanel>
+        
+        <DockPanel Grid.Column="1">
+            <Button Content="Подробнее" DockPanel.Dock="Bottom"/>
+        </DockPanel>
     </Grid>
 </Window>
