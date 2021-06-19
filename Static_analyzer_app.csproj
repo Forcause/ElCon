@@ -224,6 +224,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Analyzer.cs" />
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -233,9 +234,11 @@
         <Compile Include="FileService\IFileInterface.cs" />
         <Compile Include="FileService\JsonFileService.cs" />
         <Compile Include="FileService\XmlFileService.cs" />
-        <Compile Include="Model\Analyzer.cs" />
         <Compile Include="Model\AssemblyInfo.cs" />
+        <Compile Include="Model\ElementInfo.cs" />
         <Compile Include="Model\ProjectInfo.cs" />
+        <Compile Include="Model\SemanticElement.cs" />
+        <Compile Include="Model\SyntaxElement.cs" />
         <Compile Include="ViewModel\AnalyzerViewModel.cs" />
         <Compile Include="View\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>

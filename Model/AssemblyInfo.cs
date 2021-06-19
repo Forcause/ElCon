@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 
-namespace roslynTest
+namespace Static_analyzer_app.Model
 {
     public class AssemblyInfo
     {

@@ -1,7 +1,13 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using Microsoft.Build.Locator;
+using Microsoft.CodeAnalysis;
 using Static_analyzer_app.FileService;
+using Static_analyzer_app.Model;
 using Static_analyzer_app.ViewModel;
+using ProjectInfo = Static_analyzer_app.Model.ProjectInfo;
 
 namespace Static_analyzer_app.View
 {
@@ -14,7 +20,11 @@ namespace Static_analyzer_app.View
         {
             InitializeComponent();
             MSBuildLocator.RegisterDefaults();
-            DataContext = new AnalyzerViewModel(new JsonFileService(), new XmlFileService());
+        }
+
+        private void FileClicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AnalyzerViewModel(new JsonFileService(), new XmlFileService(), @"C:\Users\Forcause\RiderProjects\testing\testing.csproj");
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace roslynTest
+namespace Static_analyzer_app.Model
 {
     public class ProjectInfo : CSharpSyntaxWalker
     {
-        private int elementsCounter = 0;
+        private int elementsCounter = 0; //всего элементов в проекте
 
         public int ElementsCounter
         {
