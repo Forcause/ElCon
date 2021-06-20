@@ -239,7 +239,11 @@
         <Compile Include="Model\ProjectInfo.cs" />
         <Compile Include="Model\SemanticElement.cs" />
         <Compile Include="Model\SyntaxElement.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="ViewModel\AnalyzerViewModel.cs" />
+        <Compile Include="View\InfoWindow.xaml.cs">
+          <DependentUpon>InfoWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="View\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
@@ -264,6 +268,7 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <Page Include="View\InfoWindow.xaml" />
       <Page Include="View\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>

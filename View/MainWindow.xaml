@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Static_analyzer_app"
+        xmlns:local="clr-namespace:Static_analyzer_app.View"
         mc:Ignorable="d"
         Title="Project analyzer" Height="600" Width="800">
     <Window.Resources>
@@ -24,7 +24,7 @@
             <ToolBarPanel DockPanel.Dock="Top">
                 <ToolBarTray Grid.ColumnSpan="2" Background="#202020" IsLocked="True" Margin="-5,0,-13,0">
                     <ToolBar Background="#202020" DockPanel.Dock="Top" Padding="5, 0, 0, 0">
-                        <Button Content="File" Foreground="White" Click="FileClicked"
+                        <Button Content="File" Foreground="White" Command="{Binding LoadProject}"
                                 Style="{StaticResource ToolbarButtons}" />
                         <Button Content="Save" Foreground="White" Style="{StaticResource ToolbarButtons}" />
                         <Button Content="Info" Foreground="White" Style="{StaticResource ToolbarButtons}" />
@@ -36,15 +36,15 @@
                        FontFamily="Segoe UI Symbol"
                        DockPanel.Dock="Top" Text="Syntax information" />
 
-            <ListBox Background="#202020" Grid.Column="0" ItemsSource="{Binding SyntaxElements}"
+            <ListBox Background="#202020" Grid.Column="0" ItemsSource="{Binding SyntaxElements, UpdateSourceTrigger=PropertyChanged}"
                      BorderBrush="#202020" BorderThickness="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">
                             <TextBlock FontSize="16" Foreground="White" FontWeight="SemiBold"
-                                       Text="{Binding Path=SyntaxType}" />
+                                       Text="{Binding Path=SyntaxType, UpdateSourceTrigger=PropertyChanged}" />
                             <TextBlock FontSize="14" Foreground="White" FontWeight="SemiBold"
-                                       Text="{Binding Path=TypeCount}" />
+                                       Text="{Binding Path=TypeCount, UpdateSourceTrigger=PropertyChanged}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -64,14 +64,14 @@
                        DockPanel.Dock="Top" Text="Semantic information" />
 
             <ListBox Grid.Column="1" Grid.Row="1" Background="#202020" BorderBrush="#202020" BorderThickness="2"
-                     ItemsSource="{Binding SemanticElements}">
+                     ItemsSource="{Binding SemanticElements, UpdateSourceTrigger=PropertyChanged}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">
                             <TextBlock FontSize="18" Foreground="White" FontWeight="SemiBold"
-                                       Text="{Binding Path=TypeName}" />
+                                       Text="{Binding Path=TypeName , UpdateSourceTrigger=PropertyChanged}" />
                             <TextBlock FontSize="14" Foreground="White" FontWeight="SemiBold"
-                                       Text="{Binding Path=TypeCounter}" />
+                                       Text="{Binding Path=TypeCounter, UpdateSourceTrigger=PropertyChanged}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -79,7 +79,7 @@
 
             <Button Grid.Row="2" Content="Подробнее" Width="70" Background="#1c1e26" Foreground="#A6CC70" Height="20"
                     FontSize="12"
-                    Margin="10" DockPanel.Dock="Bottom" />
+                    Margin="10" DockPanel.Dock="Bottom"  Click="OpenInfoWindow"/>
         </Grid>
     </Grid>
 </Window>
