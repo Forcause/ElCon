@@ -203,3 +203,5 @@ C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\View\MainWindow.g.
 C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\View\MainWindow.baml
 C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\Static_analyzer_app.csproj.CopyComplete
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\View\InfoWindow.g.cs
+C:\Users\Forcause\RiderProjects\Static_analyzer_app\obj\Debug\View\InfoWindow.baml

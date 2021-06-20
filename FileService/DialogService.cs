@@ -12,7 +12,7 @@ namespace Static_analyzer_app.FileService
         public bool OpenFileDialog()
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = System.Environment.SystemDirectory;
+            ofd.InitialDirectory = System.Environment.CurrentDirectory;
             ofd.Filter = "Файл csproj|*.csproj";
             if (ofd.ShowDialog() == true)
             {
@@ -26,7 +26,7 @@ namespace Static_analyzer_app.FileService
         public bool SaveFileDialog()
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.InitialDirectory = System.Environment.SystemDirectory;
+            sfd.InitialDirectory = System.Environment.CurrentDirectory;
             sfd.Filter = "Файл в xml|*.xml|Файл в json|*.json";
             if (sfd.ShowDialog() == true)
             {

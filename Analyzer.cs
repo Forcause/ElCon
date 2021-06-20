@@ -25,8 +25,8 @@ namespace Static_analyzer_app
                     }
                 }
             }
-
-            return new ObservableCollection<SemanticElement>(SemanticElements.Where(el => el.TypeCounter != 0));
+            var res = new ObservableCollection<SemanticElement>(SemanticElements.Where(el => el.TypeCounter != 0));
+            return res;
         }
 
         public static ObservableCollection<SyntaxElement> GetSyntaxInfo(AssemblyInfo assemblyInfo,
@@ -40,8 +40,8 @@ namespace Static_analyzer_app
                     syntaxElements.Single(e => e.SyntaxType == c.Kind().ToString()).TypeCount++;
                 }
             }
-
-            return new ObservableCollection<SyntaxElement>(syntaxElements.Where(el => el.TypeCount != 0));
+            var res = new ObservableCollection<SyntaxElement>(syntaxElements.Where(el => el.TypeCount != 0));
+            return res;
         }
     }
 }
