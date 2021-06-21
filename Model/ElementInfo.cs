@@ -13,15 +13,17 @@ namespace Static_analyzer_app.Model
         private string _typeName;
         public string TypeName => _typeName;
 
-        private string _metadataName;
-        public string MetadataName => _metadataName;
+        private string _parentFile;
+        public string ParentFile => _parentFile;
 
-        public ElementInfo(string? varName, string typeName, string metadataName)
+        public ElementInfo(string? varName, string typeName, string parentFile)
         {
             _typeName = typeName;
-            _metadataName = metadataName;
+            _parentFile = parentFile;
             _varName = varName;
             OnPropertyChanged("TypeName");
+            OnPropertyChanged("VarName");
+            OnPropertyChanged("MetadataName");
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

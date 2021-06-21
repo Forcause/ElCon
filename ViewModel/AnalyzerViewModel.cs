@@ -21,6 +21,7 @@ namespace Static_analyzer_app.ViewModel
         private XmlFileService _xmlFileService;
 
         private AssemblyInfo _assemblyInfo;
+        public int ElementsCount => _assemblyInfo.ProjectInfo.ElementsCounter;
         
         public ObservableCollection<SemanticElement> SemanticElements { get; private set; }
         public ObservableCollection<SyntaxElement> SyntaxElements { get; private set; }
@@ -28,8 +29,8 @@ namespace Static_analyzer_app.ViewModel
 
         public AnalyzerViewModel(JsonFileService jsonFileService, XmlFileService xmlFileService)
         {
-            this._jsonFileService = jsonFileService;
-            this._xmlFileService = xmlFileService;
+            _jsonFileService = jsonFileService;
+            _xmlFileService = xmlFileService;
             SemanticElements = new ObservableCollection<SemanticElement>();
             SyntaxElements = new ObservableCollection<SyntaxElement>();
             ElementInfos = new ObservableCollection<ElementInfo>();
@@ -65,6 +66,10 @@ namespace Static_analyzer_app.ViewModel
                         if (_dialogService.OpenFileDialog() == true)
                         {
                             _assemblyInfo = new AssemblyInfo(_dialogService.FilePath);
+                            
+                            SemanticElements = new ObservableCollection<SemanticElement>();
+                            SyntaxElements = new ObservableCollection<SyntaxElement>();
+                            ElementInfos = new ObservableCollection<ElementInfo>();
 
                             LoadInfo(_assemblyInfo);
                             OnPropertyChanged("SemanticElements");

@@ -49,7 +49,6 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-
         </DockPanel>
 
         <Grid Grid.Column="1" Background="#202020">

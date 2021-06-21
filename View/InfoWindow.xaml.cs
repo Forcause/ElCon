@@ -6,8 +6,8 @@ namespace Static_analyzer_app.View
     {
         public InfoWindow(Window owner)
         {
-            InitializeComponent();
             DataContext = owner.DataContext;
+            InitializeComponent();
         }
     }
 }

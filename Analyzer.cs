@@ -19,12 +19,15 @@ namespace Static_analyzer_app
                     var typeSymbol = model.GetTypeInfo(node).Type;
                     if (typeSymbol != null)
                     {
-                        SemanticElements.Single(e => e.TypeName == typeSymbol.TypeKind.ToString()).TypeCounter++;
+                        if (SemanticElements.SingleOrDefault(e => e.TypeName == typeSymbol.TypeKind.ToString()) == null)
+                            SemanticElements.Add(new SemanticElement(typeSymbol.TypeKind.ToString(), 1));
+                        else SemanticElements.Single(e => e.TypeName == typeSymbol.TypeKind.ToString()).TypeCounter++;
                         ElementInfos.Add(new ElementInfo((model.GetSymbolInfo(node).Symbol)?.Name, typeSymbol.Name,
-                            typeSymbol.MetadataName));
+                            node.GetLocation().ToString()));
                     }
                 }
             }
+
             var res = new ObservableCollection<SemanticElement>(SemanticElements.Where(el => el.TypeCounter != 0));
             return res;
         }
@@ -37,9 +40,12 @@ namespace Static_analyzer_app
                 List<SyntaxNode> allNodes = tree.GetRoot().DescendantNodesAndSelf().ToList().Distinct().ToList();
                 foreach (var c in allNodes)
                 {
+                    if(syntaxElements.SingleOrDefault(e => e.SyntaxType == c.Kind().ToString()) == null)
+                        syntaxElements.Add(new SyntaxElement(c.Kind().ToString(), 1));
                     syntaxElements.Single(e => e.SyntaxType == c.Kind().ToString()).TypeCount++;
                 }
             }
+
             var res = new ObservableCollection<SyntaxElement>(syntaxElements.Where(el => el.TypeCount != 0));
             return res;
         }

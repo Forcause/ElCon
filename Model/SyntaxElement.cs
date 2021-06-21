@@ -24,6 +24,13 @@ namespace Static_analyzer_app.Model
             OnPropertyChanged("TypeCount");
             OnPropertyChanged("SyntaxType");
         }
+        public SyntaxElement(string type, int ty)
+        {
+            _syntaxType = type;
+            _typeCount = 0;
+            OnPropertyChanged("TypeCount");
+            OnPropertyChanged("SyntaxType");
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

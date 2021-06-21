@@ -31,6 +31,15 @@ namespace Static_analyzer_app.Model
                 
         }
 
+        public SemanticElement(string typeName, int typeCounter)
+        {
+            _typeName = typeName;
+            _typeCounter = typeCounter;
+            OnPropertyChanged("TypeCounter");
+            OnPropertyChanged("TypeName");
+                
+        }
+        
         public event PropertyChangedEventHandler? PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
