@@ -22,7 +22,7 @@ namespace Static_analyzer_app.ViewModel
 
         private AssemblyInfo _assemblyInfo;
         public int ElementsCount => _assemblyInfo.ProjectInfo.ElementsCounter;
-        
+
         public ObservableCollection<SemanticElement> SemanticElements { get; private set; }
         public ObservableCollection<SyntaxElement> SyntaxElements { get; private set; }
         public ObservableCollection<ElementInfo> ElementInfos { get; private set; }
@@ -45,13 +45,19 @@ namespace Static_analyzer_app.ViewModel
                 SyntaxElements.Add(new SyntaxElement(t));
             }
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void LoadInfo(AssemblyInfo assemblyInfo)
+        {
+            SemanticElements = Analyzer.GetSemanticElements(_assemblyInfo, SemanticElements, ElementInfos);
+            SyntaxElements = Analyzer.GetSyntaxInfo(_assemblyInfo, SyntaxElements);
         }
 
         //дописать реализацию комманд
@@ -66,7 +72,7 @@ namespace Static_analyzer_app.ViewModel
                         if (_dialogService.OpenFileDialog() == true)
                         {
                             _assemblyInfo = new AssemblyInfo(_dialogService.FilePath);
-                            
+
                             SemanticElements = new ObservableCollection<SemanticElement>();
                             SyntaxElements = new ObservableCollection<SyntaxElement>();
                             ElementInfos = new ObservableCollection<ElementInfo>();
@@ -85,10 +91,28 @@ namespace Static_analyzer_app.ViewModel
             }
         }
 
-        private void LoadInfo(AssemblyInfo assemblyInfo)
+        /*
+        public BaseCommand SaveCommand
         {
-            SemanticElements = Analyzer.GetSemanticElements(_assemblyInfo, SemanticElements, ElementInfos);
-            SyntaxElements = Analyzer.GetSyntaxInfo(_assemblyInfo, SyntaxElements);
+            get
+            {
+                return saveCommand ??= new BaseCommand(obj =>
+                {
+                    try
+                    {
+                        if (_dialogService.OpenFileDialog() == true)
+                        {
+                            switch (_dialogService.FilterIndex)
+                            {
+                                case
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            
         }
+        */
     }
 }
