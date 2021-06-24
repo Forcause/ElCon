@@ -4,9 +4,8 @@ namespace ElCon.View
 {
     public partial class InfoWindow : Window
     {
-        public InfoWindow(Window owner)
+        public InfoWindow()
         {
-            DataContext = owner.DataContext;
             InitializeComponent();
         }
     }

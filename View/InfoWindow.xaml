@@ -5,113 +5,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:ElCon.View"
         mc:Ignorable="d"
-        Title="{Binding ElementsCount}" Height="Auto" Width="Auto" Background="#202020">
-    <Window.Resources>
-        <Style x:Key="SimpleText">
-            <Setter Property="TextBlock.FontFamily" Value="Segoe UI Symbol" />
-            <Setter Property="TextBlock.Margin" Value="0,0, 20, 0" />
-            <Setter Property="TextBlock.FontSize" Value="18" />
-            <Setter Property="TextBlock.FontWeight" Value="Heavy" />
-            <Setter Property="TextBlock.Foreground" Value="White" />
-            <Setter Property="TextBlock.Background" Value="#202020" />
-        </Style>
-        <Style x:Key="myHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
-            <Setter Property="Background" Value="#202020" />
-        </Style>
-        <Style x:Key="{x:Type GridViewColumnHeader}"
-               TargetType="GridViewColumnHeader">
-            <Setter Property="HorizontalContentAlignment"
-                    Value="Center" />
-            <Setter Property="VerticalContentAlignment"
-                    Value="Center" />
-            <Setter Property="Background" Value="#202020" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#202121"/>
-                    <Setter Property="Foreground" Value="White"/>
-                </Trigger>
-                <Trigger Property="IsFocused" Value="True">
-                    <Setter Property="Background" Value="#202021" />
-                    <Setter Property="Foreground" Value="White" />
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#202121" />
-                    <Setter Property="Foreground" Value="White" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="ListViewItem">
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#202121" />
-                    <Setter Property="Foreground" Value="White" />
-                </Trigger>
-                <Trigger Property="IsFocused" Value="True">
-                    <Setter Property="Background" Value="#202021" />
-                    <Setter Property="Foreground" Value="White" />
-                </Trigger>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#202121" />
-                    <Setter Property="Foreground" Value="White" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-
-    <ListView Background="#202020" BorderThickness="0" BorderBrush="#202020" Width="Auto"
-              ItemsSource="{Binding ElementInfos, UpdateSourceTrigger=PropertyChanged}">
-        <ListView.View>
-            <GridView>
-                <GridViewColumn Width="Auto">
-                    <GridViewColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="Название переменной" Style="{StaticResource SimpleText}" />
-                        </DataTemplate>
-                    </GridViewColumn.HeaderTemplate>
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="14" Foreground="White"
-                                       Text="{Binding Path = VarName, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-
-                <GridViewColumn Width="Auto">
-                    <GridViewColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="Тип данных" Style="{StaticResource SimpleText}" />
-                        </DataTemplate>
-                    </GridViewColumn.HeaderTemplate>
-
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="14" Foreground="White"
-                                       Text="{Binding Path = TypeName, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-
-                <GridViewColumn Width="Auto">
-                    <GridViewColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="Путь к файлу" Style="{StaticResource SimpleText}" />
-                        </DataTemplate>
-                    </GridViewColumn.HeaderTemplate>
-
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock FontSize="14" Foreground="White"
-                                       Text="{Binding Path = ParentFile, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-            </GridView>
-        </ListView.View>
-    </ListView>
+        Title="Info" Height="300" Width="600" Background="#202020">
+    <Grid>
+        <TextBlock Background="#202020" TextWrapping="Wrap" FontSize="14" Padding="5"
+                   Name="info" Foreground="White" MaxHeight="800" MaxWidth="600" FontFamily="Segoe UI Symbol">
+            <Run
+                Text="•ElCon - это приложение, разработанное на Roslyn API, которое собирает информацию по интересующему Вас проекту." />
+            <LineBreak />
+            <Run
+                Text="•При запуске приложения Вы увидите главный экран. Пока не загружен ни один проект, будут отображаться все возможные типы данных из синтаксиса и семантики." />
+            <LineBreak />
+            <Run
+                Text="•Для загрузки интересующего проекта воспользуйтесь кнопкой &quot;File&quot;. По нажатию данной кнопки откроется окно, где Вам необходимо выбрать файл проекта в формате &quot;.csproj&quot;." />
+            <LineBreak />
+            <Run
+                Text="•После успешной загрузки проекта список объектов обновится и будет отображать название и количество типов, использующихся в Вашем проекте" />
+            <LineBreak />
+            <Run
+                Text="•Для получения дополнительной информации, например, названия переменных, их типов данных и их расположению, нажмите кнопку &quot;Подробнее&quot;." />
+            <LineBreak />
+            <Run
+                Text="•Вы также можете сохранить все используемые ноды синтаксического дерева в текстовый файл. Для этого воспользуйтесь функционалом кнопки &quot;Save&quot;." />
+        </TextBlock>
+    </Grid>
 </Window>
-<!--
-
-
-
-
--->

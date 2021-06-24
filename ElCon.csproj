@@ -240,6 +240,9 @@
         <Compile Include="Model\SyntaxElement.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="ViewModel\AnalyzerViewModel.cs" />
+        <Compile Include="View\AdditionalWindow.xaml.cs">
+          <DependentUpon>AdditionalWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="View\InfoWindow.xaml.cs">
           <DependentUpon>InfoWindow.xaml</DependentUpon>
         </Compile>
@@ -267,6 +270,7 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <Page Include="View\AdditionalWindow.xaml" />
       <Page Include="View\InfoWindow.xaml" />
       <Page Include="View\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>

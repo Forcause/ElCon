@@ -190,3 +190,5 @@ C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\ElCon.csproj.CoreCompileInputs.c
 C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\ElCon.csproj.CopyComplete
 C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\ElCon.exe
 C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\ElCon.pdb
+C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\View\AdditionalWindow.g.cs
+C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\View\AdditionalWindow.baml

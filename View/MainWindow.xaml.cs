@@ -17,9 +17,15 @@ namespace ElCon.View
             DataContext = new AnalyzerViewModel(new TxtFileService());
         }
 
-        private void OpenInfoWindow(object sender, RoutedEventArgs e)
+        private void OpenAdditionalWindow(object sender, RoutedEventArgs e)
         {
-            InfoWindow info = new InfoWindow(this);
+            AdditionalWindow additional = new AdditionalWindow(this);
+            additional.Show();
+        }
+
+        private void ShowInfoBox(object sender, RoutedEventArgs e)
+        {
+            InfoWindow info = new InfoWindow();
             info.Show();
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElCon.View"
         mc:Ignorable="d"
-        Title="Project analyzer" Height="600" Width="800">
+        Title="ElCon" Height="600" Width="800">
     <Window.Resources>
         <Style x:Key="ToolbarButtons">
             <Setter Property="Button.FontFamily" Value="Segoe UI Symbol" />
@@ -25,8 +25,9 @@
                     <ToolBar Background="#202020" DockPanel.Dock="Top" Padding="5, 0, 0, 0">
                         <Button Content="File" Foreground="White" Command="{Binding LoadProject}"
                                 Style="{StaticResource ToolbarButtons}" />
-                        <Button Content="Save" Foreground="White" Command="{Binding SaveCommand}" Style="{StaticResource ToolbarButtons}" />
-                        <Button Content="Info" Foreground="White" Style="{StaticResource ToolbarButtons}" />
+                        <Button Content="Save" Foreground="White" Command="{Binding SaveCommand}"
+                                Style="{StaticResource ToolbarButtons}" />
+                        <Button Content="Info" Foreground="White" Style="{StaticResource ToolbarButtons}" Click="ShowInfoBox" />
                     </ToolBar>
                 </ToolBarTray>
             </ToolBarPanel>
@@ -35,7 +36,8 @@
                        FontFamily="Segoe UI Symbol"
                        DockPanel.Dock="Top" Text="Syntax information" />
 
-            <ListBox Background="#202020" Grid.Column="0" ItemsSource="{Binding SyntaxElements, UpdateSourceTrigger=PropertyChanged}"
+            <ListBox Background="#202020" Grid.Column="0"
+                     ItemsSource="{Binding SyntaxElements, UpdateSourceTrigger=PropertyChanged}"
                      BorderBrush="#202020" BorderThickness="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -57,7 +59,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" FontSize="18" Foreground="#A6CC70" Margin="0, 37.2,0, 0" TextAlignment="Center"
+            <TextBlock Grid.Row="0" Grid.Column="1" FontSize="18" Foreground="#A6CC70" Margin="0, 37.2,0, 0"
+                       TextAlignment="Center"
                        FontWeight="Heavy" FontFamily="Segoe UI Symbol"
                        DockPanel.Dock="Top" Text="Semantic information" />
 
@@ -77,7 +80,7 @@
 
             <Button Grid.Row="2" Content="Подробнее" Width="70" Background="#1c1e26" Foreground="#A6CC70" Height="20"
                     FontSize="12"
-                    Margin="10" DockPanel.Dock="Bottom"  Click="OpenInfoWindow"/>
+                    Margin="10" DockPanel.Dock="Bottom" Click="OpenAdditionalWindow" />
         </Grid>
     </Grid>
 </Window>
