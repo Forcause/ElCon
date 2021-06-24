@@ -224,7 +224,6 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="Analyzer.cs" />
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -239,6 +238,7 @@
         <Compile Include="Model\SemanticElement.cs" />
         <Compile Include="Model\SyntaxElement.cs" />
         <Compile Include="Properties\Annotations.cs" />
+        <Compile Include="ViewModel\Analyzer.cs" />
         <Compile Include="ViewModel\AnalyzerViewModel.cs" />
         <Compile Include="View\AdditionalWindow.xaml.cs">
           <DependentUpon>AdditionalWindow.xaml</DependentUpon>

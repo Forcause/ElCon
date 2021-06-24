@@ -5,30 +5,30 @@ using ElCon.Model;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace ElCon
+namespace ElCon.ViewModel
 {
     public static class Analyzer
     {
-        public static ObservableCollection<SemanticElement> GetSemanticElements(AssemblyInfo _assemblyInfo,
-            ObservableCollection<SemanticElement> SemanticElements, ObservableCollection<ElementInfo> ElementInfos)
+        public static ObservableCollection<SemanticElement> GetSemanticElements(AssemblyInfo assemblyInfo,
+            ObservableCollection<SemanticElement> semanticElements, ObservableCollection<ElementInfo> elementInfos)
         {
-            foreach (var model in _assemblyInfo.ProjectInfo.Models)
+            foreach (var model in assemblyInfo.ProjectInfo.Models)
             {
                 foreach (var node in model.SyntaxTree.GetRoot().DescendantNodesAndSelf())
                 {
                     var typeSymbol = model.GetTypeInfo(node).Type;
                     if (typeSymbol != null)
                     {
-                        if (SemanticElements.SingleOrDefault(e => e.TypeName == typeSymbol.TypeKind.ToString()) == null)
-                            SemanticElements.Add(new SemanticElement(typeSymbol.TypeKind.ToString(), 1));
-                        else SemanticElements.Single(e => e.TypeName == typeSymbol.TypeKind.ToString()).TypeCounter++;
-                        ElementInfos.Add(new ElementInfo((model.GetSymbolInfo(node).Symbol)?.Name, typeSymbol.Name,
+                        if (semanticElements.SingleOrDefault(e => e.TypeName == typeSymbol.TypeKind.ToString()) == null)
+                            semanticElements.Add(new SemanticElement(typeSymbol.TypeKind.ToString(), 1));
+                        else semanticElements.Single(e => e.TypeName == typeSymbol.TypeKind.ToString()).TypeCounter++;
+                        elementInfos.Add(new ElementInfo((model.GetSymbolInfo(node).Symbol)?.Name, typeSymbol.Name,
                             node.GetLocation().ToString()));
                     }
                 }
             }
 
-            var res = new ObservableCollection<SemanticElement>(SemanticElements.Where(el => el.TypeCounter != 0));
+            var res = new ObservableCollection<SemanticElement>(semanticElements.Where(el => el.TypeCounter != 0));
             return res;
         }
 
