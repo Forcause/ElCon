@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Static_analyzer_app.View
+namespace ElCon.View
 {
     public partial class InfoWindow : Window
     {

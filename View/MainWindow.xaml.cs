@@ -1,9 +1,9 @@
 ﻿using System.Windows;
+using ElCon.FileService;
+using ElCon.ViewModel;
 using Microsoft.Build.Locator;
-using Static_analyzer_app.FileService;
-using Static_analyzer_app.ViewModel;
 
-namespace Static_analyzer_app.View
+namespace ElCon.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,7 +14,7 @@ namespace Static_analyzer_app.View
         {
             InitializeComponent();
             MSBuildLocator.RegisterDefaults();
-            DataContext = new AnalyzerViewModel(new JsonFileService(), new XmlFileService());
+            DataContext = new AnalyzerViewModel(new TxtFileService());
         }
 
         private void OpenInfoWindow(object sender, RoutedEventArgs e)

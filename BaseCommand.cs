@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Static_analyzer_app
+namespace ElCon
 {
     public class BaseCommand : ICommand
     {

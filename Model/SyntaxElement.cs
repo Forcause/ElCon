@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Static_analyzer_app.Annotations;
+using ElCon.Annotations;
 
-namespace Static_analyzer_app.Model
+namespace ElCon.Model
 {
     public class SyntaxElement : INotifyPropertyChanged
     {

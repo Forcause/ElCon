@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Static_analyzer_app.Model
+namespace ElCon.Model
 {
     public class ProjectInfo : CSharpSyntaxWalker
     {

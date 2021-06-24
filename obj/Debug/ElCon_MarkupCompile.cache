@@ -1,11 +1,11 @@
-﻿Static_analyzer_app
+﻿ElCon
 
 
 winexe
 C#
 .cs
 C:\Users\Forcause\RiderProjects\ElCon\obj\Debug\
-Static_analyzer_app
+ElCon
 none
 false
 DEBUG;TRACE
@@ -16,5 +16,5 @@ C:\Users\Forcause\RiderProjects\ElCon\App.xaml
 1641466772520
 View\InfoWindow.xaml;View\MainWindow.xaml;
 
-True
+False
 

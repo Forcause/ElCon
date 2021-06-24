@@ -1,11 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using Microsoft.CodeAnalysis;
 
-namespace Static_analyzer_app.FileService
+namespace ElCon.FileService
 {
     public interface IFIleInterface
-    {/*
-        //переписать логику сохранения
-        void Save(string fileName, Analyzer analyzer);
-        */
+    {
+        void Save(string fileName, List<SyntaxNode> nodes);
     }
 }

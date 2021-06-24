@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static_analyzer_app", "Static_analyzer_app.csproj", "{C83DFB1C-ACB1-4825-8631-AA6E83CBB418}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElCon", "ElCon.csproj", "{C83DFB1C-ACB1-4825-8631-AA6E83CBB418}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

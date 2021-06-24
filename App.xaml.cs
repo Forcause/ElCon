@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Static_analyzer_app
+namespace ElCon
 {
     /// <summary>
     /// Interaction logic for App.xaml

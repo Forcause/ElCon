@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Static_analyzer_app.Properties
+namespace ElCon.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace Static_analyzer_app.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("Static_analyzer_app.Properties.Resources",
+                        new global::System.Resources.ResourceManager("ElCon.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

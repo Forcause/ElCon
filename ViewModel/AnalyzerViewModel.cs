@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using ElCon.Annotations;
+using ElCon.FileService;
+using ElCon.Model;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Static_analyzer_app.Annotations;
-using Static_analyzer_app.Model;
-using Static_analyzer_app.FileService;
-using Static_analyzer_app.View;
 
-namespace Static_analyzer_app.ViewModel
+namespace ElCon.ViewModel
 {
     public class AnalyzerViewModel : INotifyPropertyChanged
     {
@@ -17,8 +17,7 @@ namespace Static_analyzer_app.ViewModel
         private BaseCommand saveCommand;
 
         private static DialogService _dialogService = new DialogService();
-        private JsonFileService _jsonFileService;
-        private XmlFileService _xmlFileService;
+        private TxtFileService _txtFileService;
 
         private AssemblyInfo _assemblyInfo;
         public int ElementsCount => _assemblyInfo.ProjectInfo.ElementsCounter;
@@ -27,10 +26,10 @@ namespace Static_analyzer_app.ViewModel
         public ObservableCollection<SyntaxElement> SyntaxElements { get; private set; }
         public ObservableCollection<ElementInfo> ElementInfos { get; private set; }
 
-        public AnalyzerViewModel(JsonFileService jsonFileService, XmlFileService xmlFileService)
+        public AnalyzerViewModel(TxtFileService txtFileService)
         {
-            _jsonFileService = jsonFileService;
-            _xmlFileService = xmlFileService;
+            _txtFileService = txtFileService;
+            
             SemanticElements = new ObservableCollection<SemanticElement>();
             SyntaxElements = new ObservableCollection<SyntaxElement>();
             ElementInfos = new ObservableCollection<ElementInfo>();
@@ -91,7 +90,6 @@ namespace Static_analyzer_app.ViewModel
             }
         }
 
-        /*
         public BaseCommand SaveCommand
         {
             get
@@ -100,19 +98,23 @@ namespace Static_analyzer_app.ViewModel
                 {
                     try
                     {
-                        if (_dialogService.OpenFileDialog() == true)
+                        if (_dialogService.SaveFileDialog() == true)
                         {
-                            switch (_dialogService.FilterIndex)
+                            foreach (var tree in _assemblyInfo.ProjectInfo.Trees)
                             {
-                                case
+                                _txtFileService.Save(_dialogService.FilePath,
+                                    tree.GetRoot().DescendantNodesAndSelf().ToList().Distinct().ToList());
                             }
-                            
+                            _dialogService.ShowMessage("Save complete");
                         }
                     }
-                }
+                    catch (Exception ex)
+                    {
+                        _dialogService.ShowMessage(ex.Message);
+                    }
+                });
             }
             
         }
-        */
     }
 }

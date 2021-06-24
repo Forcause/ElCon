@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
 
-namespace Static_analyzer_app.Model
+namespace ElCon.Model
 {
     public class AssemblyInfo
     {

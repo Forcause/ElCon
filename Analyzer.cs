@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Static_analyzer_app.Model;
+using ElCon.Model;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace Static_analyzer_app
+namespace ElCon
 {
     public static class Analyzer
     {

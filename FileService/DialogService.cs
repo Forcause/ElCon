@@ -2,7 +2,7 @@
 using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
 
-namespace Static_analyzer_app.FileService
+namespace ElCon.FileService
 {
     public class DialogService
     {
@@ -27,7 +27,7 @@ namespace Static_analyzer_app.FileService
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = System.Environment.CurrentDirectory;
-            sfd.Filter = "Файл в xml|*.xml|Файл в json|*.json";
+            sfd.Filter = "Файл в txt|*.txt";
             if (sfd.ShowDialog() == true)
             {
                 FilterIndex = sfd.FilterIndex;
